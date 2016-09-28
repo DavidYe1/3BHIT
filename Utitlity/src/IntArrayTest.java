@@ -5,7 +5,7 @@ import java.util.Random;
  * Created by @Autor david ye on @version 28.09.2016.
  */
 public class IntArrayTest {
-    private static int[] testArray1 = new int[10]; //10 stelliges array erstellen
+    private static final int[] testArray1 = new int[10]; //10 stelliges array erstellen
 
     public static void main(String[] args) {
         randomFill(testArray1);// array füllen
@@ -22,7 +22,7 @@ public class IntArrayTest {
      *
      * @param ar1
      */
-    public static void randomFill(int[] ar1) {
+    private static void randomFill(int[] ar1) {
         Random r = new Random();
         for (int i = 0; i < ar1.length; i++) {
             ar1[i] = r.nextInt(100);

@@ -8,8 +8,8 @@ public class IntTest {
      */
     private static int testvar1 = (int) (Math.random() * 100); //zufallszahl
     private static int testvar2 = (int) (Math.random() * 100); //zufallszahl
-    private static int fixvar1 = 8; //fixwert
-    private static int fixvar2 = 12;//fixwert
+    private static short fixvar1 = 8; //fixwert
+    private static double fixvar2 = 12;//fixwert
 
     /**
      * @param args
@@ -20,6 +20,6 @@ public class IntTest {
                 Utility.max(testvar1, testvar2) + " ist groeser als " + Utility.min(testvar1, testvar2) + "\n" + //vergleicht 2 zugällige zahlen
                 "Die aus sage " + testvar1 + "=" + testvar2 + " ist " + ((Utility.equalTo(testvar1, testvar2)) ? "wahr." : "falsch.") + "\n" + //vergleicht ob 2 zufällige zahlen gleich sind
                 "Die aus sage " + fixvar1 + "=" + fixvar1 + " ist " + ((Utility.equalTo(fixvar1, fixvar1)) ? "wahr." : "falsch.") + "\n" +  //sollte immer true zurück geben
-                testvar1 + "ist " + ((Utility.isOdd(testvar1)) ? "ungerade." : "gerade."));//schaut of eine zufallszahl ungerade ist
+                testvar1 + " ist " + ((Utility.isOdd(testvar1)) ? "ungerade." : "gerade."));//schaut of eine zufallszahl ungerade ist
     }
 }

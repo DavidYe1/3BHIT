@@ -10,7 +10,7 @@ public class IntArrayTest {
     public static void main(String[] args) {
         randomFill(testArray1);
         randomFill(testArray2);
-        System.out.print(Utility.random(testArray1)))
+        System.out.print(Utility.random(testArray1));
     }
 
     public static void randomFill(int[] ar1) {

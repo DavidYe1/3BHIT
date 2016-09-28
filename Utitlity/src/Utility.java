@@ -1,6 +1,32 @@
 import static java.util.Arrays.sort;
 
 /**
+ * Erstellen Sie eine Klasse mit Methoden, welche möglichst globale einsetzbare Methoden anbietet. Stellen Sie sicher, dass diese Klasse nicht erweitert bzw. instanziert werden kann.
+
+ Folgende Methoden sollten angeboten werden:
+
+ public final static <T> T random( T x, T y)
+
+ public final static <T> T random( T[] x)
+
+ public final static <T extends Number> boolean isOdd (T x)
+
+ public final static <T extends Comparable <T>> T min (T a,T b)
+
+ public final static <T extends Comparable <T>> T max (T a,T b)
+
+ public final static <T extends Comparable <T>> T min (T[] x)
+
+ public final static <T extends Comparable <T>> T max (T[] x)
+
+ public final static <T extends Comparable <T>> boolean equalTo(T x,T y)
+
+ Testen Sie Methoden mit unterschiedlichen Klassen.
+ Fangen Sie die Exceptions in der Testklasse ab!
+
+ Geben Sie das Beispiel entsprechend der Abgaberichtlinie ab.
+
+ Viel Erfolg
  * Created by @Autor david ye on @version 22.09.2016.
  */
 

@@ -11,7 +11,8 @@ public class IntTest {
     private static int fixvar2 = 12;//fixwert
 
     /**
-     * @param args testen aller methoden die kein array verlangen
+     * @param args
+     * testen aller methoden die kein array verlangen
      */
     public static void main(String[] args) {
         System.out.print(Utility.random(fixvar1, fixvar2) + " wurde zufaellig ausgewählt.\n" + //nimmt 2 fixwerte und gibt 1 zufällig zurück

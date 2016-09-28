@@ -8,8 +8,9 @@ public class IntTest {
     private static int fixvar2 = 12;
 
     public static void main(String[] args) {
-        System.out.println(Utility.random(fixvar1, fixvar2) + " wurde zufaellig ausgewählt.");
-        System.out.println(Utility.max(testvar1, testvar2) + " ist groeser als " + Utility.min(testvar1, testvar2));
-        System.out.println("Die aus sage " + fixvar1 + "=" + fixvar2 + " ist:" + Utility.equalTo(fixvar1, fixvar2));
+        System.out.print(Utility.random(fixvar1, fixvar2) + " wurde zufaellig ausgewählt.\n" +
+                Utility.max(testvar1, testvar2) + " ist groeser als " + Utility.min(testvar1, testvar2) + "\n" +
+                "Die aus sage " + fixvar1 + "=" + fixvar2 + " ist:" + Utility.equalTo(fixvar1, fixvar2) + "\n" +
+                "Die aus sage " + fixvar1 + "=" + fixvar1 + " ist:" + Utility.equalTo(fixvar1, fixvar1) + "\n");
     }
 }

@@ -5,12 +5,10 @@ import java.util.Random;
  */
 public class IntArrayTest {
     private static int[] testArray1 = new int[10];
-    private static int[] testArray2 = new int[10];
 
     public static void main(String[] args) {
         randomFill(testArray1);
-        randomFill(testArray2);
-        System.out.print(Utility.random(testArray1));
+        System.out.print(Utility.max(testArray1));
     }
 
     public static void randomFill(int[] ar1) {

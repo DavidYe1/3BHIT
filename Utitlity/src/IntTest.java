@@ -1,5 +1,6 @@
 /**
- * Created by David Ye on 22.09.2016.
+ * Created by @Autor david ye on @version 22.09.2016.
+ * Hier testen wir alle methoden, an hand von int werten, die keine arrays verlangen.
  */
 public class IntTest {
     /**

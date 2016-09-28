@@ -10,7 +10,8 @@ public class IntTest {
     public static void main(String[] args) {
         System.out.print(Utility.random(fixvar1, fixvar2) + " wurde zufaellig ausgewählt.\n" +
                 Utility.max(testvar1, testvar2) + " ist groeser als " + Utility.min(testvar1, testvar2) + "\n" +
-                "Die aus sage " + fixvar1 + "=" + fixvar2 + " ist:" + Utility.equalTo(fixvar1, fixvar2) + "\n" +
-                "Die aus sage " + fixvar1 + "=" + fixvar1 + " ist:" + Utility.equalTo(fixvar1, fixvar1) + "\n");
+                "Die aus sage " + fixvar1 + "=" + fixvar2 + " ist " + ((Utility.equalTo(fixvar1, fixvar2)) ? "wahr." : "falsch.") + "\n" +
+                "Die aus sage " + fixvar1 + "=" + fixvar1 + " ist " + ((Utility.equalTo(fixvar1, fixvar1)) ? "wahr." : "falsch.") + "\n" +
+                testvar1 + "ist " + ((Utility.isOdd(testvar1)) ? "ungerade." : "gerade."));
     }
 }

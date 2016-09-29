@@ -1,4 +1,4 @@
-import static java.util.Arrays.sort;
+import java.util.Arrays;
 
 /**
  * Erstellen Sie eine Klasse mit Methoden, welche möglichst globale einsetzbare Methoden anbietet. Stellen Sie sicher, dass diese Klasse nicht erweitert bzw. instanziert werden kann.
@@ -32,8 +32,8 @@ import static java.util.Arrays.sort;
 
 class Utility {
     /**
-     * @param x
-     * @param y
+     * @param x   generic value
+     * @param y   generic value
      * @param <T>
      * @return wenn die zufallszahl größer ist als die hälfte gibt es a zurück ander falls b
      * wählt zuffälig zwischen 2 zahlen
@@ -43,9 +43,9 @@ class Utility {
     }
 
     /**
-     * @param a
-     * @param b
-     * @param <T>
+     * @param a   generic value
+     * @param b   generic value
+     * @param <T> generic datatype
      * @return gibt den größeren param zurück
      */
     public final static <T extends Comparable<T>> T max(T a, T b) {
@@ -53,9 +53,9 @@ class Utility {
     }
 
     /**
-     * @param a
-     * @param b
-     * @param <T>
+     * @param a   generic value
+     * @param b   generic value
+     * @param <T> generic datatype
      * @return gibt den kleineren param zurück
      */
     public final static <T extends Comparable<T>> T min(T a, T b) {
@@ -63,9 +63,9 @@ class Utility {
     }
 
     /**
-     * @param a
-     * @param b
-     * @param <T>
+     * @param a   generic value
+     * @param b   generic value
+     * @param <T> generic datatype
      * @return gibt true zurück wenn a=b, ander falls false
      */
     public final static <T extends Comparable<T>> boolean equalTo(T a, T b) {
@@ -73,8 +73,8 @@ class Utility {
     }
 
     /**
-     * @param x
-     * @param <T>
+     * @param x   generic value
+     * @param <T> generic datatype
      * @return gibt ein zufälliges element eines Arrays zurück
      */
     public final static <T> T random(T[] x) {
@@ -85,30 +85,30 @@ class Utility {
     }
 
     /**
-     * @param x
-     * @param <T>
+     * @param x   generic value
+     * @param <T> generic datatype
      * @return gibt das element, mit dem kleinsten wert, eines Arrays zurück
      */
     public final static <T extends Comparable<T>> T min(T[] x) {
-        sort(x);
+        Arrays.sort(x);
         if (x == null || x.length == 0) throw new NullPointerException();
         return x[0];
     }
 
     /**
-     * @param x
-     * @param <T>
+     * @param x   generic value
+     * @param <T> generic datatype
      * @return gibt das element, mit dem groesten wert, eines Arrays zurück
      */
     public final static <T extends Comparable<T>> T max(T[] x) {
-        sort(x);
+        Arrays.sort(x);
         if (x == null || x.length == 0) throw new NullPointerException();
-        return x[x.length];
+        return x[x.length - 1];
     }
 
     /**
-     * @param x
-     * @param <T>
+     * @param x   generic value
+     * @param <T> generic datatype
      * @return gibt true zurueck wenn der param ungerade ist
      */
     public final static <T extends Number> boolean isOdd(T x) {

@@ -5,10 +5,38 @@ public class MyLinkedQueue<E> implements Iterable<E> {
     private Cell front, rear;
     private int count;
 
+    /**
+     * Constructor
+     */
     public MyLinkedQueue() {
         front = null;
         rear = null;
         count = 0;
+    }
+
+    public boolean isEmpty() {
+
+    }
+
+    public void append(E e) {
+        if (rear == null) {
+            rear = new Cell(e);
+            front = rear;
+        } else {
+            Cell newCell = new Cell(e, rear);
+            newCell.next = newCell;
+            rear = newCell;
+        }
+    }
+
+    public E delete() {
+        if (this.front == null) return null;
+        E e1 = this.front.e;
+        this.front.next = null;
+        this.front = this.front.next;
+        if (front == null)
+            this.rear = null;
+        return e1;
     }
     private class Cell {
         private Cell next;
@@ -17,6 +45,10 @@ public class MyLinkedQueue<E> implements Iterable<E> {
         public Cell(E e, Cell next) {
             this.e = e;
             this.next = next;
+        }
+
+        public Cell(E e) {
+            this.e = e;
         }
     }
 

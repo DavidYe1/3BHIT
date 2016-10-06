@@ -1,3 +1,5 @@
+import java.util.NoSuchElementException;
+
 /**
  * Created by Keqin on 29.09.2016.
  */
@@ -15,16 +17,17 @@ public class MyLinkedQueue<E> implements Iterable<E> {
     }
 
     public boolean isEmpty() {
-        retrurn true;
+        return front == null;
     }
 
     public void append(E e) {
-        if (rear == null) { //wenn am ende nichts ist
-            rear = new Cell(e);//neue Cell erstellen
+        if (rear == null) {
+            rear = new Cell(e);
+            front = rear;
         } else {
-            Cell newCell = new Cell(e, rear);// wenn am ende was ist
-            newCell.next = newCell;//weiter gehen
-            rear = newCell;//ende mit neue cell füllen
+            Cell newCell = new Cell(e, rear);
+            newCell.next = newCell;
+            rear = newCell;
         }
     }
 
@@ -37,6 +40,16 @@ public class MyLinkedQueue<E> implements Iterable<E> {
             this.rear = null;
         return e1;
     }
+
+    public E peek() throws NoSuchElementException {
+        E first = this.front.e;
+        if (isEmpty()) {
+            throw new NoSuchElementException();
+        } else {
+            return first;
+        }
+    }
+
     private class Cell {
         private Cell next;
         private E e;

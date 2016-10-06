@@ -15,17 +15,16 @@ public class MyLinkedQueue<E> implements Iterable<E> {
     }
 
     public boolean isEmpty() {
-
+        retrurn true;
     }
 
     public void append(E e) {
-        if (rear == null) {
-            rear = new Cell(e);
-            front = rear;
+        if (rear == null) { //wenn am ende nichts ist
+            rear = new Cell(e);//neue Cell erstellen
         } else {
-            Cell newCell = new Cell(e, rear);
-            newCell.next = newCell;
-            rear = newCell;
+            Cell newCell = new Cell(e, rear);// wenn am ende was ist
+            newCell.next = newCell;//weiter gehen
+            rear = newCell;//ende mit neue cell füllen
         }
     }
 

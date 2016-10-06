@@ -87,19 +87,33 @@ public class MyLinkedQueue<E> implements Iterable<E> {
         }
     }
 
+    /**
+     * gibt die größe des queues zurück
+     *
+     * @return queuegröße
+     */
     public int size() {
         return count;
     }
 
     @Override
     public Iterator<E> iterator() {
-        return null;
+        return new MyIterator();
     }
 
+    /**
+     * Cell klasse
+     */
     private class Cell {
         private Cell next;
         private E e;
 
+        /**
+         * Constructor
+         *
+         * @param e
+         * @param next
+         */
         public Cell(E e, Cell next) {
             this.e = e;
             this.next = next;
@@ -111,7 +125,15 @@ public class MyLinkedQueue<E> implements Iterable<E> {
     }
 
     private class MyIterator implements Iterator<E> {
+        private Cell pointer;
+        private boolean begin;
+        private boolean removeable;
 
+        public MyIterator() {
+            begin = true;
+            removeable = false;
+            pointer = null;
+        }
         @Override
         public boolean hasNext() {
             return false;

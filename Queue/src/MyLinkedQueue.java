@@ -104,21 +104,26 @@ public class MyLinkedQueue<E> implements Iterable<E> {
     /**
      * Cell klasse
      */
-    private class Cell {
+    private class Cell {    //Fehler: Exception in thread "main" java.lang.NullPointerException at MyLinkedQueue$Cell.access$000(MyLinkedQueue.java:107)
         private Cell next;
         private E e;
 
         /**
          * Constructor
          *
-         * @param e
-         * @param next
+         * @param e     das Objekt
+         * @param next  das nächste element
          */
         public Cell(E e, Cell next) {
             this.e = e;
             this.next = next;
         }
 
+        /**
+         * Konstruktor
+         *
+         * @param e
+         */
         public Cell(E e) {
             this.e = e;
         }
@@ -129,24 +134,31 @@ public class MyLinkedQueue<E> implements Iterable<E> {
         private boolean begin;
         private boolean removeable;
 
+        /**
+         * Konstruktor
+         */
         public MyIterator() {
             begin = true;
             removeable = false;
             pointer = null;
         }
+
         @Override
-        public boolean hasNext() {
-            return false;
+        public boolean hasNext() { // Exception in thread "main" java.lang.NullPointerException at MyLinkedQueue$MyIterator.next(MyLinkedQueue.java:145)
+            return removeable = true;
         }
 
         @Override
         public E next() {
-            return null;
+            if (!hasNext()) throw new NoSuchElementException("Error");
+            pointer = pointer.next;
+            return pointer.e;
         }
 
         @Override
         public void remove() {
-
+            //if(pointer.e)throw new IllegalStateException("Error");
+            delete();
         }
     }
 
